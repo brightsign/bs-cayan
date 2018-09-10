@@ -203,3 +203,17 @@ The CED-HOSTNAME is the POS IP Address.
 	* EnableCancelConfirm: transparent -> cancel\_confirmation,
 	* EnableCancelConfirmTip: transparent ->cancel\_confirmation\_tip
 
+
+## Additional functionalities 
+
+* Some functionalities are optional and is not implemented in the demo. The instructions to apply those will be illustrated below:
+
+1. default item added to every order
+	* Situation: When you have an item that you want to automatically added to every order. 
+	* E.g. In this demo, we can add 'BREAD' as the default item, so that every order of the burger will automatically charge for the price of bread.
+	*  Steps:
+
+		> 1.  In File > Presentation Properties > Variables, set "totalprice" to be the price of the default item (after tax). E.g. The price of BREAD is 1.50 before tax, and the tax percentage is 10%. Then the totalprice will be set to 1.65.
+		> 2. "initialPrice" will be the default item price (before tax). Using the example above, initialPrice will be set to 1.5. 
+		> 3. Add "initialitemname" in Variables. And set it to the name of the default item. E.g. BREAD
+		> 4. In zone1: MainBackground, double click state welcome_page. Then in Advanced tab, set "totalprice" to the same as "totalprice" in step 1. 
