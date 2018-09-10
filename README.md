@@ -1,10 +1,11 @@
-#BrightAuthor Presentation Demo for Cayan
+# BrightAuthor Presentation Demo for Cayan
 
-##Description:
+
+## Description:
 This project includes a BrightAuthor plugin and example presentation. The plugin sends information to (and receives information from) the Cayan Cloud and a Genius POS unit to complete transactions.
 
 
-##User Variables: 
+## User Variables: 
 * The following are user variables used by the plugin to communicate and display transaction information.
 * All variables are required except for the ones marked as optional.
 
@@ -104,8 +105,8 @@ The CED-HOSTNAME is the POS IP Address.
 
 
 
-##Presentation Workflow:
-###State0: Check user variables settings
+## Presentation Workflow:
+### State0: Check user variables settings
 
 * if all variables meet requirements (see userVariables section) -> transit to state1 (zone message: CheckFinished)
 * else -> display an error message (which is automatically set by BrightScript)
@@ -113,7 +114,7 @@ The CED-HOSTNAME is the POS IP Address.
 	* Check setting…
 	* [uservariable] cannot be empty! 
 
-###State1: Welcome Page
+### State1: Welcome Page
 * Enabled button(s): 
 	* add item
 * Change state trigger(s): 
@@ -121,7 +122,7 @@ The CED-HOSTNAME is the POS IP Address.
 * Message: 
 	* Welcome to build-a-burger! (Set at entry to this state)
 
-###State2: Modify Order
+### State2: Modify Order
 * Enabled button(s): 
 	* add item, minus item, place order, cancel order
 	* (zone message: EnablePlaceOrderTip, EnableCancelOrder)
@@ -131,7 +132,7 @@ The CED-HOSTNAME is the POS IP Address.
 * Message: 
 	* Select your burger items! (Set at entry to this state)
 
-###State3: Tip 
+### State3: Tip 
 * Enabled button(s): 
 	* Four tip zones, cancel order (zone message: EnableCancelOrderTip)
 * Change state trigger(s): 
@@ -140,7 +141,7 @@ The CED-HOSTNAME is the POS IP Address.
 * Message: 
 	* Please select tip amount: (Set at entry of this state)
 
-###State4: Order In Progress 
+### State4: Order In Progress 
 * Enabled button(s): 
 	* cancel order, display “Processing...” message
 * Change state trigger(s): 
@@ -151,7 +152,7 @@ The CED-HOSTNAME is the POS IP Address.
 	* Processing... (Set at entry of this state)
 	* Thank you for your order! (Set by BrightScript)
 
-###State5: Transaction Error
+### State5: Transaction Error
 * Enabled button(s): 
 	* Place order, cancel order, display error message
 * Change state trigger(s): 
@@ -161,13 +162,13 @@ The CED-HOSTNAME is the POS IP Address.
 * Message: 
 	* Different error msgs are displayed depending on POS response
 
-###State6: Order Complete
+### State6: Order Complete
 * Display the order complete message.
 * Will automatically transit to state1 after timeout.
 
 
 
-##Zone Messages:
+## Zone Messages:
 1. Main background zone
 	* CheckFinished: check\_setting -> welcome\_page,
 	* ChooseTip: modify\_order -> tip,
@@ -203,14 +204,14 @@ The CED-HOSTNAME is the POS IP Address.
 	* EnableCancelConfirmTip: transparent ->cancel\_confirmation\_tip
 
 
-##For development:
-###command to import npm modules:
+## For development:
+### command to import npm modules:
 npm init -y
 
 npm install --save xml-js shortid
 
 npm install --save-dev webpack webpack-cli
 
-###command to build the webpack bundle:
+### command to build the webpack bundle:
 
 npx webpack --mode development
