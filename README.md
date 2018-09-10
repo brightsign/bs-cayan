@@ -11,97 +11,96 @@ This project includes a BrightAuthor plugin and example presentation. The plugin
 
 1. itemname[n], itemcount[n], itemprice[n], itemupc[n]
 
- These values represent items on the menu, and [n] indicates the item ID. 
+	* These values represent items on the menu, and [n] indicates the item ID. 
  
- For example, the first item in the menu
+	* For example, the first item in the menu
 will have an ID of 1, and it will have these values associated with it: itemname1, itemcount1, itemprice1 (,itemupc1).
 
- When creating IDs for your menu items, the first item ID must start at 1 and increase by 1 every time (so that the highest item ID value will equal the value of the totalItemCount variable).
+	* When creating IDs for your menu items, the first item ID must start at 1 and increase by 1 every time (so that the highest item ID value will equal the value of the totalItemCount variable).
  
- ```
- itemname[n]: The name of the item
+ 	>itemname[n]: The name of the item.
 
- itemcount[n]: The number of units of the item in the current order
+ 	>itemcount[n]: The number of units of the item in the current order.
 
- itemprice[n]: The price of a single unit of the item
+ 	>itemprice[n]: The price of a single unit of the item.
 
- itemupc[n]:(optional) The UPC (universal product code) of the item.
- ```
+ 	>itemupc[n]:(optional) The UPC (universal product code) of the item.
+
 	
 2. totalprice
 
- The total order price (including tax and tip). If you want a default item added to every order, set this variable to the price of that item (after tax). If not, set it to 0.
+	* The total order price (including tax and tip). If you want a default item added to every order, set this variable to the price of that item (after tax). If not, set it to 0.
 
 3. initialPrice
 
- The initial order price. If you want a default item added to every order, set this variable to the price of that item (before tax). If not, set it to 0.
+	* The initial order price. If you want a default item added to every order, set this variable to the price of that item (before tax). If not, set it to 0.
 
 4. message
 
- The message to display on screen. The value of this variable will change depending on events and errors received from the plugin. 
+	* The message to display on screen. The value of this variable will change depending on events and errors received from the plugin. 
 
 5. ordernumber
 
- The order number of the current transaction. This value will automatically increment and is usually set to 0 as the initial value.
+	* The order number of the current transaction. This value will automatically increment and is usually set to 0 as the initial value.
 
 6. tenPercentTip, fifteenPercentTip, twentyPercentTip
 
- These variables are used to display the tip price after calculating different tip precentages. These values should be set to 0. They will be generated at the tip state.
+	* These variables are used to display the tip price after calculating different tip precentages. These values should be set to 0. They will be generated at the tip state.
 
 7. totalItemCount
  
- The total amount of items in the presentation. This value should equal the highest item ID in the presentation. This variable is used to iterate on every item during the reset step.
+	* The total amount of items in the presentation. This value should equal the highest item ID in the presentation. This variable is used to iterate on every item during the reset step.
 
 8. initialitemname (optional)
 
- The name of the default item added to every order. If do not have a default item, this variable does not need to be part of the presentation.
+	* The name of the default item added to every order. If do not have a default item, this variable does not need to be part of the presentation.
 
 9. taxPercentInDecimal
 
- The tax percentage of the location. The tax for all items will be calculated using this variable. The percentage must be specified as a decimal value: For example, if the tax percentage is 10%, then set the variable to be 0.1.
+	* The tax percentage of the location. The tax for all items will be calculated using this variable. The percentage must be specified as a decimal value: For example, if the tax percentage is 10%, then set the variable to be 0.1.
 
 10. merchantName
 
- The name of the business or organization that owns the Merchantware account.
+	* The name of the business or organization that owns the Merchantware account.
 
 11. merchantSiteId
 
- The site identifier of the location or storefront owned by the Merchantware account owner.
+	* The site identifier of the location or storefront owned by the Merchantware account owner.
 
 12. merchantKey
 
- The software key or password for the site accessing the Merchantware account.
+	* The software key or password for the site accessing the Merchantware account.
 
 13. POSIPAddress
 
- The IP Address of the Cayan POS. We recommend using a static IP Address.
+	* The IP Address of the Cayan POS. We recommend using a static IP Address.
 
 14. softwareName
 
- The name of the software application sending the request. 
+	* The name of the software application sending the request. 
 
 15. softwareVersion
 
- The version number of the software application sending the request.
+	* The version number of the software application sending the request.
 
 16. dba
 
- The business name of the merchant as it should appear to the customer.
+	* The business name of the merchant as it should appear to the customer.
 
 17. terminalId
 
- The terminal ID, which is used to uniquely identify the terminal to the processor. This value must contain all numeric characters. If no value is supplied, the last two digits of the Genius-device serial number will be used as a default value.
+	* The terminal ID, which is used to uniquely identify the terminal to the processor. This value must contain all numeric characters. If no value is supplied, the last two digits of the Genius-device serial number will be used as a default value.
 
 18. transportendpoint
 
- The transport endpoint URL, which is most commonly set to https://transport.merchantware.net/v4/transportService.asmx
+	* The transport endpoint URL, which is most commonly set to https://transport.merchantware.net/v4/transportService.asmx
 The CED-HOSTNAME is the POS IP Address.
 
 19. geniusendpoint(optional)
 
- The Genius endpoint URI. The default endpoint is formatted as http://[CED-HOSTNAME]:8080/v2/pos?
+	* The Genius endpoint URI. The default endpoint is formatted as http://[CED-HOSTNAME]:8080/v2/pos?
 
- The CED-HOSTNAME is the POS IP Address. If you are using a different endpoint, put the uri in this variable. Otherwise, do not add this variable.
+	* The CED-HOSTNAME is the POS IP Address. If you are using a different endpoint, put the uri in this variable. Otherwise, do not add this variable.
 
 
 
@@ -165,7 +164,6 @@ The CED-HOSTNAME is the POS IP Address.
 ### State6: Order Complete
 * Display the order complete message.
 * Will automatically transit to state1 after timeout.
-
 
 
 ## Zone Messages:
