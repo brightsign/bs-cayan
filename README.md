@@ -17,14 +17,16 @@ This project includes a BrightAuthor plugin and example presentation. The plugin
 will have an ID of 1, and it will have these values associated with it: itemname1, itemcount1, itemprice1 (,itemupc1).
 
 	* When creating IDs for your menu items, the first item ID must start at 1 and increase by 1 every time (so that the highest item ID value will equal the value of the totalItemCount variable).
- 
- 	>itemname[n]: The name of the item.
 
- 	>itemcount[n]: The number of units of the item in the current order.
+ ```
+ 	itemname[n]: The name of the item.
 
- 	>itemprice[n]: The price of a single unit of the item.
+ 	itemcount[n]: The number of units of the item in the current order.
 
- 	>itemupc[n]:(optional) The UPC (universal product code) of the item.
+ 	itemprice[n]: The price of a single unit of the item.
+
+ 	itemupc[n]:(optional) The UPC (universal product code) of the item.
+ 	```
 
 	
 2. totalprice
@@ -201,15 +203,3 @@ The CED-HOSTNAME is the POS IP Address.
 	* EnableCancelConfirm: transparent -> cancel\_confirmation,
 	* EnableCancelConfirmTip: transparent ->cancel\_confirmation\_tip
 
-
-## For development:
-### command to import npm modules:
-npm init -y
-
-npm install --save xml-js shortid
-
-npm install --save-dev webpack webpack-cli
-
-### command to build the webpack bundle:
-
-npx webpack --mode development
