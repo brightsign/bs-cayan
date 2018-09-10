@@ -18,7 +18,7 @@ will have an ID of 1, and it will have these values associated with it: itemname
 
 	* When creating IDs for your menu items, the first item ID must start at 1 and increase by 1 every time (so that the highest item ID value will equal the value of the totalItemCount variable).
 
- ```
+ 	```
  	itemname[n]: The name of the item.
 
  	itemcount[n]: The number of units of the item in the current order.
@@ -26,9 +26,9 @@ will have an ID of 1, and it will have these values associated with it: itemname
  	itemprice[n]: The price of a single unit of the item.
 
  	itemupc[n]:(optional) The UPC (universal product code) of the item.
+ 	
  	```
 
-	
 2. totalprice
 
 	* The total order price (including tax and tip). If you want a default item added to every order, set this variable to the price of that item (after tax). If not, set it to 0.
